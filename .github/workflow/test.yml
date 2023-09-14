@@ -1,0 +1,27 @@
+name: sicheng2-313
+
+on:
+
+push:
+
+branches:
+
+- main
+
+jobs:
+
+query-processor:
+
+    runs-on: ubuntu-latest
+
+    name: QueryProcessor
+
+    steps:
+
+    - uses: actions/checkout@v3
+
+    - uses: bahmutov/npm-install@v1
+
+    - run: npm run lint (Run ESLint)
+
+    - run: npm run test (Run Jest)
