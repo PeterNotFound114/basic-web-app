@@ -11,5 +11,9 @@ export default function QueryProcessor(query: string): string {
     return "sicheng114";
   }
 
+  if (query.toLowerCase().includes("name")) {
+    return "↖(^ω^)↗";
+  }
+
   return "";
 }
