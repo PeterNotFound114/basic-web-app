@@ -15,5 +15,9 @@ export default function QueryProcessor(query: string): string {
     return "Peter";
   }
 
+  if (query.toLowerCase().includes("plus")) {
+    return (parseInt(query.slice((query.indexOf("plus") - 3))) + parseInt(query.slice((query.indexOf("plus") + 5)))).toString();
+  }
+
   return "";
 }
