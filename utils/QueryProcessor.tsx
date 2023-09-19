@@ -16,13 +16,19 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("plus")) {
-    return (parseInt(query.slice((query.indexOf("plus") - 3))) + parseInt(query.slice((query.indexOf("plus") + 5)))).toString();
+    return (parseInt(query.slice(query.indexOf("plus") - 3)) + parseInt(query.slice((query.indexOf("plus") + 5)))).toString();
   }
 
   if (query.toLowerCase().includes("largest:")) {
     const numList = query.slice(query.indexOf("largest:") + 9).split(' ,').map(parseInt)
     return Math.max(...numList).toString()
   }
+
+  if (query.toLowerCase().includes("multiplied by")) {
+    return (parseInt(query.slice(query.indexOf("multiplied by") - 3)) * parseInt(query.slice((query.indexOf("multiplied by") + 14)))).toString()
+  }
+
+  
 
   return "";
 }
